@@ -14,7 +14,7 @@ namespace APITest
        // private RestClient client;
         private RestRequest request;
         private const string baseUrl = "https://buggy.justtestit.org/";
-        private const Method post = Method.Post;
+        //private const Method post = Method.Post;
 
         public RestClient setUrl(string endpoint)
         {
@@ -24,7 +24,7 @@ namespace APITest
         }
         public RestRequest CreatePostRequest(string jsonString)
         {
-            request = new RestRequest(post);
+            request = new RestRequest(Method.Post);
             request.AddHeader("Accept", "application/json");
             request.AddParameter("application/json", jsonString, ParameterType.RequestBody);
             return request;
